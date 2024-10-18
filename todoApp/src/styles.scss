@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-image: url("./assets/email-pattern.webp");
+  background-size: 50%;
+  background-position: center;
+  background-repeat: repeat;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+h2 {
+  font-weight: 700;
+  font-size: 2rem;
+  color: #2c3e50;
+}
+
+h3 {
+  font-weight: 500;
+  font-size: 1.5rem;
+  color: #34495e;
+}
+
+.todo-list li {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  font-size: 1.1rem;
+}
+
+.completed-task {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.incomplete-task {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #2980b9;
+  transition: background-color 0.3s ease;
+}
+
+/* BARRA DI RICERCA */
+input[type="text"] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+.todo-list li {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.todo-list li:hover {
+  transform: translateX(5px);
+  background-color: #ecf0f1;
+}

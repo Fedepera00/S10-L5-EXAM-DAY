@@ -1,0 +1,35 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">To-do-list app by Fedepera</a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      (click)="isCollapsed = !isCollapsed"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div
+      [ngClass]="{ collapse: isCollapsed, 'navbar-collapse': true }"
+      id="navbarNav"
+    >
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/" routerLinkActive="active">TODOS</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/completed" routerLinkActive="active"
+            >Completed Todos</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/users" routerLinkActive="active"
+            >Users</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

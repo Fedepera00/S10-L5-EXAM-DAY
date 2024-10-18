@@ -1,0 +1,44 @@
+<div class="search-bar mb-3">
+  <input
+    [(ngModel)]="searchTerm"
+    class="form-control"
+    placeholder="Search by User"
+  />
+</div>
+
+<div class="completed-todo-container">
+  <div *ngFor="let user of users | filterUser : searchTerm" class="user-card">
+    <img
+      [src]="user.image"
+      alt="{{ user.firstName }}'s profile"
+      class="profile-img"
+    />
+
+    <div class="user-info">
+      <h3>{{ user.firstName }} {{ user.lastName }}</h3>
+
+      <!-- NO CON TASK COMPLETATI -->
+      <ul
+        class="todo-list"
+        *ngIf="getUserCompletedTodos(user.id).length > 0; else noCompletedTasks"
+      >
+        <li
+          *ngFor="let todo of getUserCompletedTodos(user.id)"
+          [ngClass]="{
+            'completed-task': todo.completed,
+            'incomplete-task': !todo.completed
+          }"
+        >
+          {{ todo.todo }}
+        </li>
+      </ul>
+
+      <!-- SI CON TASK COMPLETATI -->
+      <ng-template #noCompletedTasks>
+        <div class="no-tasks-panel">
+          This user doesn't have any completed tasks available.
+        </div>
+      </ng-template>
+    </div>
+  </div>
+</div>
